@@ -69,7 +69,7 @@ a{color:inherit;text-decoration:none}img,video{display:block;max-width:100%}butt
 .hero-tag{display:flex;flex-wrap:wrap;gap:8px 16px;font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--goldH);font-weight:500;margin-bottom:32px;align-items:center}
 .hero-tag::before{content:"";width:32px;height:1px;background:var(--gold)}
 .hero-tag .sep{color:var(--txtM);font-weight:400}
-.hero h1{font-weight:600;font-size:clamp(44px,6.4vw,88px);line-height:1.02;letter-spacing:-.035em;margin-bottom:18px}
+.hero h1{font-weight:600;font-size:clamp(30px,4.4vw,60px);line-height:1.08;letter-spacing:-.025em;margin-bottom:18px}
 .hero h1 .line{display:block;overflow:hidden}
 .hero h1 .line span{display:inline-block;transform:translateY(120%);animation:rise 1.1s var(--eo) forwards}
 .hero h1 .line:nth-child(2) span{animation-delay:.14s}
@@ -183,7 +183,7 @@ section.blk{position:relative;padding:clamp(72px,9vw,130px) var(--g)}
 /* ── CAPABILITIES ── */
 .caps-s{background:var(--ink)}
 .capg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.cap{perspective:1200px;height:320px}
+.cap{perspective:1200px;height:320px;min-height:280px}
 .cap-i{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s var(--eio)}
 .cap:hover .cap-i,.cap.tapped .cap-i{transform:rotateY(180deg)}
 .cf{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--line2);background:var(--navy);overflow:hidden}
@@ -273,7 +273,7 @@ section.blk{position:relative;padding:clamp(72px,9vw,130px) var(--g)}
 .fm.br{bottom:14px;right:14px;border-left:0;border-top:0}
 .dir-ph .ptag{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);padding:8px 14px;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;border-radius:999px;font-weight:600}
 .dir-txt .dtag{display:inline-block;font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--goldD);margin-bottom:18px;font-weight:600}
-.dir-txt h2{font-weight:600;font-size:clamp(36px,4.4vw,56px);line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:18px}
+.dir-txt h2{font-weight:600;font-size:clamp(26px,3.2vw,40px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px}
 .dir-txt .role{font-size:clamp(15px,1.15vw,17px);font-weight:500;color:rgba(5,11,18,.78);margin-bottom:8px}
 .dir-txt .creds{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--goldD);margin-bottom:24px;font-weight:600}
 .dir-txt p{font-size:clamp(15.5px,1.15vw,17px);line-height:1.7;color:rgba(5,11,18,.82);margin-bottom:22px}
@@ -392,6 +392,228 @@ footer{background:var(--ink);color:var(--txtS);padding:70px var(--g) 30px;border
   .sico{width:44px!important;height:44px!important;border:1.5px solid rgba(255,255,255,.25)!important;border-radius:50%!important;display:grid!important;place-items:center!important;color:rgba(255,255,255,.85)!important;transition:all .25s!important;padding:0!important;background:rgba(255,255,255,.06)!important}
 .sico:hover{background:var(--gold)!important;color:var(--ink)!important;border-color:var(--gold)!important;transform:translateY(-3px)!important}
 .sico svg{width:18px!important;height:18px!important}
+
+
+/* Fix capability cards at all widths */
+@media(min-width:681px) and (max-width:1200px){
+  .cap{height:300px!important}
+  .capg{gap:14px!important}
+  .cf h3{font-size:17px!important}
+}
+@media(max-width:680px){
+  .cap{height:240px!important}
+  .capg{grid-template-columns:1fr!important;gap:12px!important}
+  .cf h3{font-size:16px!important}
+  .cf-no{font-size:10px!important}
+  .cf-hint{font-size:9px!important}
+  .cfb p{font-size:13px!important}
+}
+
+/* ═══ MOBILE OPTIMIZATION ═══ */
+@media(max-width:680px){
+    .hero h1{font-size:clamp(24px,6vw,34px)!important}
+  .hero-sub{font-size:16px!important}
+  .hero-lead{font-size:14.5px!important}
+  .hero-tag{font-size:10px!important;gap:4px 8px!important}
+  .hero-tag .sep{display:none}
+  .pill{font-size:10px!important;padding:8px 12px!important}
+  .st{font-size:clamp(28px,7vw,40px)!important}
+  .sl{font-size:15px!important}
+  .eyebrow{font-size:11px!important;letter-spacing:.12em!important}
+  .cc h3{font-size:18px!important}
+  .cc p{font-size:14px!important}
+  .shield-box{padding:22px 20px!important;gap:14px!important}
+  .shield-box p{font-size:14.5px!important}
+  .shield-box .shico{width:44px!important;height:44px!important}
+  .marq-track span{font-size:18px!important}
+  .wr{padding:20px!important}
+  .wn{font-size:36px!important}
+  .wr h3{font-size:18px!important}
+  .cap{height:260px!important}
+  .cf h3{font-size:16px!important}
+  .lc h3{font-size:18px!important}
+  .lc p{font-size:13.5px!important}
+  .proj{aspect-ratio:3/4!important}
+  .proj-meta h3{font-size:18px!important}
+  .proj-meta p{font-size:12.5px!important}
+  .sb .num{font-size:clamp(36px,10vw,52px)!important}
+  .sb .lbl{font-size:10px!important}
+  .sb .dsc{font-size:12.5px!important}
+  .dir-txt h2{font-size:clamp(22px,5vw,30px)!important}
+  .dir-callout p{font-size:15px!important}
+  .btn{padding:14px 18px!important;font-size:13px!important}
+  .nav-cta{padding:10px 14px!important;font-size:11px!important}
+  .brand-mark{width:44px!important;height:44px!important;border-radius:8px!important}
+  .brand-meta b{font-size:13px!important}
+  .brand-meta span{font-size:9px!important;letter-spacing:.06em!important}
+  section.blk{padding:56px var(--g)!important}
+  .sh{margin-bottom:36px!important}
+  .hero-stats{gap:8px!important}
+  .sc{padding:16px 14px!important}
+  .sc .val{font-size:15px!important}
+  .sc .lbl{font-size:9px!important}
+  .codes-intro{font-size:14px!important;padding:18px 20px!important}
+  .lvl-note{padding:18px 20px!important}
+  .lvl-note p{font-size:14px!important}
+  .why-intro{padding:18px 20px!important}
+  .why-intro p{font-size:15px!important}
+  .fl-wa,.fl-bt,.fl-em{width:48px!important;height:48px!important}
+  .fl-em{bottom:142px!important}
+  .fl-wa{bottom:80px!important}
+  .fl-bt{bottom:14px!important}
+  .wwh-grid>div p{font-size:13px!important}
+}
+@media(max-width:400px){
+  .hero h1{font-size:22px!important}
+  .hero-r{display:none!important}
+  .hero-trust{display:none!important}
+  .stats-row{gap:16px!important}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   REV 11 — MOBILE HARDENING (appended)
+   Date: 2026-05-23
+   Purpose: Universal mobile-friendly fixes applied to all 5 pages.
+   Author: NexGen Engineering · Hamed Jafaripour
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── Prevent horizontal scroll across all pages ── */
+html, body { max-width: 100vw; overflow-x: hidden; }
+img, video, iframe { max-width: 100%; height: auto; }
+
+/* ── Long strings wrap (URLs, emails, codes) ── */
+p, h1, h2, h3, h4, h5, h6, a, span, li, label, td, th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ── Tablet breakpoint (981px–1200px refinements) ── */
+@media (max-width: 1200px) {
+  :root { --max: 100%; }
+  .blk-in, .hero-inner, .ft-g { padding-left: 24px !important; padding-right: 24px !important; }
+}
+
+/* ── Tablet portrait (max 980px) ── */
+@media (max-width: 980px) {
+  .hero-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr) !important; }
+  .ft-g { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  .marq-track span { font-size: 16px !important; }
+}
+
+/* ── Mobile (max 680px) — REV 11 hardening ── */
+@media (max-width: 680px) {
+  /* iOS form-zoom prevention: inputs MUST be 16px+ */
+  .fld input, .fld select, .fld textarea,
+  input[type="text"], input[type="email"], input[type="tel"],
+  input[type="number"], input[type="url"], textarea, select {
+    font-size: 16px !important;
+  }
+
+  /* Touch targets — Apple/Google min 44×44 */
+  .btn, .nav-cta, .sico, .nav-links a, .fl-wa, .fl-bt, .fl-em {
+    min-height: 44px;
+  }
+  .nav-toggle { min-width: 44px; min-height: 44px; }
+
+  /* Topbar / header */
+  .tnav { padding: 12px 16px !important; }
+  .brand { gap: 10px !important; }
+  .brand-mark { width: 42px !important; height: 42px !important; }
+  .brand-meta b { font-size: 12.5px !important; line-height: 1.3 !important; }
+  .brand-meta span { font-size: 9px !important; letter-spacing: .04em !important; }
+  .nav-cta { padding: 9px 12px !important; font-size: 10.5px !important; gap: 6px; }
+  .nav-cta .dot { width: 6px !important; height: 6px !important; }
+
+  /* Section padding — comfortable but compact */
+  section.blk, .blk { padding: 48px 18px !important; }
+  .hero { padding: 80px 18px 40px !important; }
+
+  /* Hero stats grid: 2 columns on mobile */
+  .hero-stats { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .sc { padding: 14px 12px !important; }
+  .sc .ico svg { width: 22px !important; height: 22px !important; }
+  .sc .val { font-size: 13.5px !important; line-height: 1.25 !important; }
+  .sc .lbl { font-size: 9px !important; letter-spacing: .04em !important; }
+
+  /* Why NexGen / Capability grids — 1 column */
+  .wg, .why-g, .capg, .pg, .pg-full, .svc-g, .sect-g,
+  .cg, .lg, .insp-stages, .insp-row, .reg-g, .qual-g,
+  .collab-g, .c-quick, .cd-g, .wwh-grid, .stats-row,
+  .offer-grid, .why-grid, .cap-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer */
+  .ft-g { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .ft-b { flex-direction: column !important; gap: 12px !important; text-align: center !important; }
+
+  /* Floating buttons — clear stack */
+  .fl-wa, .fl-bt, .fl-em {
+    width: 48px !important;
+    height: 48px !important;
+    right: 14px !important;
+  }
+  .fl-bt { bottom: 14px !important; }
+  .fl-wa { bottom: 76px !important; }
+  .fl-em { bottom: 138px !important; }
+
+  /* Marquee — slow down + smaller */
+  .marq-track span { font-size: 14px !important; padding: 0 16px !important; }
+  .creds-track span { font-size: 12px !important; padding: 0 14px !important; }
+
+  /* Director / about photo */
+  .dir-ph, .a-photo { max-width: 320px !important; margin: 0 auto !important; }
+
+  /* Buttons stack full-width when in CTA blocks */
+  .hero-cta, .hero-buttons, .dir-actions, .s-hero-ctas {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .hero-cta .btn, .hero-buttons .btn, .dir-actions .btn, .s-hero-ctas .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Form row collapse */
+  .fld-r { grid-template-columns: 1fr !important; }
+
+  /* Cards — comfortable padding */
+  .wr, .cap, .lc, .sb, .proj, .iopt, .insp-stg, .why-card, .cc, .offer-card {
+    padding: 18px !important;
+  }
+  .cap { height: auto !important; min-height: 220px !important; }
+
+  /* Tables — convert to scrollable */
+  table { display: block; overflow-x: auto; white-space: nowrap; }
+
+  /* Section eyebrow / heading sizes */
+  .sh { flex-direction: column !important; gap: 16px !important; align-items: flex-start !important; }
+}
+
+/* ── Small mobile (max 400px) — REV 11 ── */
+@media (max-width: 400px) {
+  .brand-meta span { display: none !important; }
+  .brand-meta b { font-size: 11.5px !important; }
+  .hero-stats { grid-template-columns: 1fr !important; }
+  .nav-cta { padding: 8px 10px !important; font-size: 10px !important; }
+  .nav-cta::before { content: "💬 "; }
+  section.blk, .blk { padding: 40px 14px !important; }
+  .hero { padding: 70px 14px 30px !important; }
+}
+
+/* ── Very large screens — keep content centered ── */
+@media (min-width: 1600px) {
+  .blk-in, .hero-inner, .ft-g { max-width: 1400px; margin-left: auto; margin-right: auto; }
+}
+
+/* ── Reduce motion users ── */
+@media (prefers-reduced-motion: reduce) {
+  .marq-track, .creds-track { animation-play-state: paused !important; }
+}
+
+/* ── REV 11 END ── */
+
 </style>
 </head>
 <body id="top">
@@ -677,7 +899,7 @@ footer{background:var(--ink);color:var(--txtS);padding:70px var(--g) 30px;border
 
       <!-- Card 1: Coastal Residential -->
       <article class="proj rv">
-        <div class="proj-bg bp"></div>
+        <div class="proj-bg photo" style="background-image:url('assets/coastal-residential-drainage.jpg')"></div>
         <div class="proj-grad"></div>
         <span class="proj-corner">↗</span>
         <div class="proj-meta">
@@ -690,7 +912,7 @@ footer{background:var(--ink);color:var(--txtS);padding:70px var(--g) 30px;border
 
       <!-- Card 2: Multi-Dwelling Townhouse -->
       <article class="proj rv">
-        <div class="proj-bg photo" style="background-image:url('assets/proj-reinforcement-plan-01.jpg')"></div>
+        <div class="proj-bg photo" style="background-image:url('assets/Multi-Dwelling_Townhouse_Development.jpg')"></div>
         <div class="proj-grad"></div>
         <span class="proj-corner">↗</span>
         <div class="proj-meta">
@@ -703,7 +925,7 @@ footer{background:var(--ink);color:var(--txtS);padding:70px var(--g) 30px;border
 
       <!-- Card 3: Childcare Centre -->
       <article class="proj rv">
-        <div class="proj-bg photo" style="background-image:url('assets/proj-column-reinforcement-01.jpg')"></div>
+        <div class="proj-bg photo" style="background-image:url('assets/childcare-centre-structural-civil.jpg')"></div>
         <div class="proj-grad"></div>
         <span class="proj-corner">↗</span>
         <div class="proj-meta">
@@ -715,87 +937,11 @@ footer{background:var(--ink);color:var(--txtS);padding:70px var(--g) 30px;border
       </article>
 
       <!-- Card 4: Industrial Warehouse -->
-      <article class="proj rv">
-        <div class="proj-bg photo" style="background-image:url('assets/proj-elevation-section-01.jpg')"></div>
-        <div class="proj-grad"></div>
-        <span class="proj-corner">↗</span>
-        <div class="proj-meta">
-          <span class="cat">Industrial</span>
-          <h3>Industrial Warehouse Precast &amp; Civil Drainage</h3>
-          <span class="loc">Victoria, Australia</span>
-          <p>Warehouse and light industrial documentation involving portal framing, precast panel interface review, slab and footing coordination, retaining wall elements and stormwater drainage documentation.</p>
-        </div>
-      </article>
-
-      <!-- Card 5: Service Station -->
-      <article class="proj rv">
-        <div class="proj-bg bp"></div>
-        <div class="proj-grad"></div>
-        <span class="proj-corner">↗</span>
-        <div class="proj-meta">
-          <span class="cat">Commercial</span>
-          <h3>Service Station Structural &amp; Drainage</h3>
-          <span class="loc">Western Australia</span>
-          <p>Service station and convenience facility engineering support, including canopy support structures, slab and footing design, stormwater drainage coordination and authority submission documentation.</p>
-        </div>
-      </article>
-
-      <!-- Card 6: Carwash / Service Facility -->
-      <article class="proj rv">
-        <div class="proj-bg photo" style="background-image:url('assets/proj-slab-connection-01.jpg')"></div>
-        <div class="proj-grad"></div>
-        <span class="proj-corner">↗</span>
-        <div class="proj-meta">
-          <span class="cat">Commercial</span>
-          <h3>Service Facility / Carwash Structural &amp; Civil</h3>
-          <span class="loc">Queensland, Australia</span>
-          <p>Carwash and service facility documentation including structural framing, slab and footing design, stormwater drainage, civil coordination and permit/construction documentation support.</p>
-        </div>
-      </article>
-
-      <!-- Card 7: Heavy Industrial Foundations -->
-      <article class="proj rv">
-        <div class="proj-bg photo" style="background-image:url('assets/proj-pad-footing-detail.jpg')"></div>
-        <div class="proj-grad"></div>
-        <span class="proj-corner">↗</span>
-        <div class="proj-meta">
-          <span class="cat">Mining / Industrial</span>
-          <h3>Heavy Industrial Foundations — LNG/LPG</h3>
-          <span class="loc">Western Australia</span>
-          <p>Advanced background capability in heavy-duty reinforced concrete pad foundations, industrial footing systems, plant/equipment support, reinforcement detailing and site-specific load coordination.</p>
-        </div>
-      </article>
-
-      <!-- Card 8: International Multi-Storey -->
-      <article class="proj rv">
-        <div class="proj-bg photo" style="background-image:url('assets/proj-column-types-02.jpg')"></div>
-        <div class="proj-grad"></div>
-        <span class="proj-corner">↗</span>
-        <div class="proj-meta">
-          <span class="cat">International / BIM</span>
-          <h3>Multi-Storey Reinforced Concrete &amp; BIM Documentation</h3>
-          <span class="loc">International Experience</span>
-          <p>International background in multi-storey reinforced concrete structures, lateral analysis, slab/wall/column systems, Revit-based documentation and BIM coordination for large-scale residential/commercial projects.</p>
-        </div>
-      </article>
-
-      <!-- Card 9: Heritage Facade Retrofit -->
-      <article class="proj rv">
-        <div class="proj-bg photo" style="background-image:url('assets/proj-rebar-detail-02.jpg')"></div>
-        <div class="proj-grad"></div>
-        <span class="proj-corner">↗</span>
-        <div class="proj-meta">
-          <span class="cat">Retrofit / Heritage</span>
-          <h3>Heritage Facade &amp; Roof Retrofit Assessment</h3>
-          <span class="loc">Victoria, Australia</span>
-          <p>Structural assessment and retrofit support for existing building elements, including façade bracing, roof structure review, strengthening concepts, adaptive reuse considerations and rectification guidance.</p>
-        </div>
-      </article>
-
+      
     </div>
 
-    <div class="proj-foot rv">
-      <a class="btn btn-g" href="projects.html">Explore Full Project Experience <span class="arr">→</span></a>
+    <div style="text-align:center;margin-top:32px">
+      <a class="btn btn-p" href="projects.html">View All 19 Projects Across 6 Sectors <span class="arr">→</span></a>
     </div>
 
     <div class="proj-disclaimer rv">
